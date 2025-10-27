@@ -67,7 +67,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0e1629] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0e1629] flex items-center justify-center px-2">
         <div className="text-white">Loading...</div>
       </div>
     );
@@ -75,7 +75,7 @@ export default function Home() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#0e1629] flex items-center justify-center p-6">
+      <div className="min-h-screen bg-[#0e1629] flex items-center justify-center p-2 sm:p-4 md:p-6">
         <AuthCard onSignIn={handleSignInEmail} onSignUp={handleSignUpEmail} />
       </div>
     );
@@ -83,10 +83,10 @@ export default function Home() {
 
   return (
     <Layout user={user} onSignOut={handleSignOut}>
-      <div className="max-w-2xl mx-auto">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-white mb-2">My Tasks</h2>
-          <p className="text-gray-400">Manage your daily tasks</p>
+      <div className="w-full max-w-2xl mx-auto">
+        <div className="mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">My Tasks</h2>
+          <p className="text-gray-400 text-sm sm:text-base">Manage your daily tasks</p>
         </div>
 
         <AddTodo onAdd={handleAdd} />

@@ -16,18 +16,18 @@ export default function AddTodo({ onAdd }: AddTodoProps) {
   };
 
   return (
-    <div className="mb-6">
-      <form onSubmit={handleSubmit} className="flex gap-3">
+    <div className="mb-4 sm:mb-6">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3">
         <input
           type="text"
           placeholder="Add a new task..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="flex-1 bg-[#182343] text-white px-4 py-3 rounded border border-gray-600 focus:border-[#4c73fe] focus:outline-none"
+          className="flex-1 bg-[#182343] text-white px-3 sm:px-4 py-2 sm:py-3 rounded border border-gray-600 focus:border-[#4c73fe] focus:outline-none text-sm sm:text-base"
         />
         <button
           type="submit"
-          className="bg-[#4c73fe] text-white px-6 py-3 rounded hover:bg-blue-600 transition-colors"
+          className="bg-[#4c73fe] text-white px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-blue-600 transition-colors text-sm sm:text-base font-medium"
         >
           Add
         </button>

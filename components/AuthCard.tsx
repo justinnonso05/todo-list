@@ -63,13 +63,13 @@ export default function AuthCard({ onSignIn, onSignUp }: AuthCardProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto">
-      <div className="bg-[#182343] rounded-lg p-8 border border-gray-700">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-white mb-2">
+    <div className="w-full max-w-md mx-auto px-2">
+      <div className="bg-[#182343] rounded-lg p-4 sm:p-6 md:p-8 border border-gray-700">
+        <div className="text-center mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
             {isSignUp ? 'Create Account' : 'Sign In'}
           </h2>
-          <p className="text-gray-400">
+          <p className="text-sm sm:text-base text-gray-400">
             {isSignUp 
               ? 'Create an account to sync your todos' 
               : 'Sign in to access your todos'}
@@ -82,13 +82,13 @@ export default function AuthCard({ onSignIn, onSignUp }: AuthCardProps) {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-[#0e1629] text-white px-4 py-3 rounded border border-gray-600 focus:border-[#4c73fe] focus:outline-none"
+            className="w-full bg-[#0e1629] text-white px-3 sm:px-4 py-3 rounded border border-gray-600 focus:border-[#4c73fe] focus:outline-none text-sm sm:text-base"
             required
             disabled={loading}
           />
@@ -97,14 +97,14 @@ export default function AuthCard({ onSignIn, onSignUp }: AuthCardProps) {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-[#0e1629] text-white px-4 py-3 rounded border border-gray-600 focus:border-[#4c73fe] focus:outline-none"
+            className="w-full bg-[#0e1629] text-white px-3 sm:px-4 py-3 rounded border border-gray-600 focus:border-[#4c73fe] focus:outline-none text-sm sm:text-base"
             required
             disabled={loading}
           />
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#4c73fe] text-white py-3 rounded font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#4c73fe] text-white py-3 rounded font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
           >
             {loading ? 'Please wait...' : (isSignUp ? 'Sign Up' : 'Sign In')}
           </button>
@@ -116,7 +116,7 @@ export default function AuthCard({ onSignIn, onSignUp }: AuthCardProps) {
               setIsSignUp(!isSignUp);
               setError('');
             }}
-            className="text-[#4c73fe] hover:text-blue-400 transition-colors text-sm"
+            className="text-[#4c73fe] hover:text-blue-400 transition-colors text-xs sm:text-sm"
             disabled={loading}
           >
             {isSignUp 
