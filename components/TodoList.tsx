@@ -52,7 +52,7 @@ export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoList
                 type="checkbox"
                 checked={todo.completed}
                 onChange={() => onToggle(todo.id!, todo.completed)}
-                className="w-4 h-4 text-[#4c73fe] bg-[#0e1629] border-gray-600 rounded focus:ring-[#4c73fe] focus:ring-2 flex-shrink-0"
+                className="w-4 h-4 text-[#4c73fe] bg-[#0e1629] border-gray-600 rounded focus:ring-[#4c73fe] focus:ring-2 shrink-0"
                 aria-label={`Mark "${todo.title}" as ${todo.completed ? 'incomplete' : 'complete'}`}
                 title={`Mark "${todo.title}" as ${todo.completed ? 'incomplete' : 'complete'}`}
               />
@@ -133,7 +133,7 @@ export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoList
                 type="checkbox"
                 checked={todo.completed}
                 onChange={() => onToggle(todo.id!, todo.completed)}
-                className="w-4 h-4 text-[#4c73fe] bg-[#0e1629] border-gray-600 rounded focus:ring-[#4c73fe] focus:ring-2 flex-shrink-0"
+                className="w-4 h-4 text-[#4c73fe] bg-[#0e1629] border-gray-600 rounded focus:ring-[#4c73fe] focus:ring-2 shrink-0"
                 aria-label={`Mark "${todo.title}" as ${todo.completed ? 'incomplete' : 'complete'}`}
                 title={`Mark "${todo.title}" as ${todo.completed ? 'incomplete' : 'complete'}`}
               />
@@ -155,7 +155,7 @@ export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoList
                 />
               ) : (
                 <span
-                  className={`flex-1 min-w-0 break-words ${
+                  className={`flex-1 min-w-0 wrap-break-words ${
                     todo.completed ? 'text-gray-400 line-through' : 'text-white'
                   }`}
                 >
@@ -164,7 +164,7 @@ export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoList
               )}
             </div>
 
-            <div className="flex items-center space-x-2 flex-shrink-0 ml-3">
+            <div className="flex items-center space-x-2 shrink-0 ml-3">
               {editingId === todo.id ? (
                 <>
                   <button
